@@ -70,7 +70,7 @@ function init() {
         // after all input is collected, run the writeToFile function
         .then((data) => {
             //save all information in a file called readMe
-            writeToFile("readMe.md", data)
+            writeToFile("generatedReadMe.md", data)
         })
 }
 

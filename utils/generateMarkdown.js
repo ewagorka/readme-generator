@@ -25,6 +25,7 @@ function generateMarkdown(data) {
 
 
   return `# ${data.title}
+  
   ![Github license](${licenseBadge})
 
   ## Description
