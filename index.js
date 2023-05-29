@@ -7,57 +7,71 @@ const generateMarkdown = require("./utils/generateMarkdown");
 const questions = [
     {
         type: 'input',
-        message: 'What is the title of your project?',
+        message: 'What is of your Github username?',
+        name: 'github',
+    },
+    {
+        type: 'input',
+        message: 'What is your email address?',
+        name: 'email',
+    },
+    {
+        type: 'input',
+        message: 'What is your project\'s title?',
         name: 'title',
     },
     {
         type: 'input',
-        message: 'What iare the installation instructions?',
+        message: 'Please provide a short description of this project:',
         name: 'description',
     },
     {
-        type: 'input',
-        message: 'What languages do you know?',
-        name: 'instalation',
+        type: 'list',
+        message: 'What is the license of this project?',
+        name: 'license',
+        choices: ['GPLv3', 'MIT', 'Unlincense', "Creative Commons License"],
     },
     {
         type: 'input',
-        message: 'What is the usage?',
+        message: 'What command should be run to install any dependencies?',
+        name: 'installation',
+    },
+    {
+        type: 'input',
+        message: 'What command should be run to run tests?',
+        name: 'tests',
+    },
+    {
+        type: 'input',
+        message: 'What does the user need to know about using this repo?',
         name: 'usage',
     },
     {
-        type: 'checkbox',
-        message: 'What is the license of this project?',
-        name: 'license',
-        choices: ['Apache License 2.0','GNU GPLv3', 'MIT', 'ISC License'],
-    },
-    {
         type: 'input',
-        message: 'Provide examples on how to run tests of your application:',
-        name: 'tests',
+        message: 'What does the user need to know about contributing to the repo?',
+        name: 'conrtibuting',
     },
-    {
-        type: 'input',
-        message: 'Provide examples on how to run tests of your application:',
-        name: 'tests',
-    },
-
 ];
 
 // function to write README file
 function writeToFile(fileName, data) {
+    //write data into the file
+    fs.writeFile(fileName, generateMarkdown(data), (err) =>
+        // if there's an error log it out, if not say readMe generated!
+        err ? console.log(err) : console.log('readMe generated!'))
 }
 
 // function to initialize program
 function init() {
-    console.log("Hello");
+    //get user input with inquirer
     inquirer
         // ask user all questions from the questions array
         .prompt(questions)
-        // display answers
-        .then((data)=>{
-        console.log( JSON.stringify(data));
-    })
+        // after all input is collected, run the writeToFile function
+        .then((data) => {
+            //save all information in a file called readMe
+            writeToFile("readMe.md", data)
+        })
 }
 
 // function call to initialize program
