@@ -70,7 +70,7 @@ function generateMarkdown(data) {
   ## Questions
 
   If you have any questions, please email me at ${data.email}.
-  Or you can find my through github: https://github.com/${data.github}.
+  Or you can find me through github: https://github.com/${data.github}.
 `;
 }
 
