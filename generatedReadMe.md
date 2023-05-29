@@ -1,13 +1,9 @@
-# README generator
+# Readme Generator
   
   ![Github license](https://img.shields.io/badge/License-MIT-blue.svg)
 
   ## Description
-  This is an app that generated a professional Github README file for any project. It will take user's input and create a quality README file with sections like: title, description, license, installation, usage, testing, and questions. This README file was created with this app, however manual changes have been added. Please see the "generatedReadMe.md" file, to see what to see a sample file, generated with this app.
-
-  ## Link to video showcase:
-
-  Please, see how the app works here: https://drive.google.com/file/d/1v40UUr9Y1f-nKCGMiKDrVIODs3dKP0XV/view?usp=sharing
+  This app generates a professional README for your Github project.
 
   ## Table of Contents
   * [Installation](#installation)
@@ -35,7 +31,8 @@
 
   ## Contributing
 
-  Before contributing to the repo please send me an email, I'd love to see what you've done!
+  Before contributing to the repo, please:
+  send me an email, I'd love to see what you've done!
 
   ## Tests
 
